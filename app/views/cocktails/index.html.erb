@@ -3,6 +3,19 @@
     <div class="page-header">
       <h1>Tell me what you Tea</h1>
       <p>Find all your favourite teas in one place</p>
+
+      <div class="tea-cards">
+        <div class="row">
+        <% @cocktails.each do |cocktail| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <%= cocktail.name %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <!---- div closing page-header ---->
     </div>
 
 
