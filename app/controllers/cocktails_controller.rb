@@ -8,6 +8,22 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @cocktail = Cocktail.new
+    @cocktail = Cocktail.new(set_params)
+  end
+
+  def create
+    @cocktail = Cocktail.new(set_params)
+    if @cocktail.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+
+  private
+
+  def set_params
+    params.require(:cocktail).permit(:name)
   end
 end

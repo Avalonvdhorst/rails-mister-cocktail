@@ -1,0 +1,40 @@
+<%= simple_form_for Cocktail.new do |f| %>
+  <%= f.error_notification %>
+  <div class="new-tea">
+    <%= f.input :name,
+                required: true,
+                label: "Name"
+                %>
+
+    <%= f.association :doses,
+                      collection: [['A squeeze'], ['1 bag'], ['1 stick'], ['A pinch'], ['1 slice']],
+                      label: "Select a dose:",
+                      :wrapper_html => { :class => "left-field" }
+                       %>
+
+    <%= f.association :ingredients,
+                      label: "Select an ingredient:",
+                      :wrapper_html => { :class => "right-field" }
+                      %>
+
+    <%= f.association :doses,
+                          collection: [['A squeeze'], ['1 bag'], ['1 stick'], ['A pinch'], ['1 slice']],
+                          required: false,
+                          label: "Select a dose:",
+                          :wrapper_html => { :class => "left-field" }
+                           %>
+
+    <%= f.association :ingredients,
+                      label: "Select an ingredient:",
+                      required: false,
+                      :wrapper_html => { :class => "right-field" }
+                      %>
+
+    <%= f.button :submit,
+                  "Add my tea!"
+                  %>
+
+  </div>
+
+
+<% end %>

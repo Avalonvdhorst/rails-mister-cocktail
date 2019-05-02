@@ -1,2 +1,16 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<h1>Create your own tea!</h1>
+
+<%= simple_form_for @cocktail do |f| %>
+
+  <div class="new-tea">
+    <%= f.input :name,
+                required: true,
+                label: "Name"
+    %>
+
+    <%= f.association :doses %>
+
+  </div>
+
+
+<% end %>
