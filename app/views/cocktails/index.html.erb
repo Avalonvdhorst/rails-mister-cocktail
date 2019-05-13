@@ -10,6 +10,12 @@
           <div class="col-xs-12 col-sm-4">
             <div class="card">
               <%= cocktail.name %>
+              <%= link_to edit_cocktail_path(cocktail) do %>
+              <i class="far fa-edit edit-icon"></i>
+              <% end %>
+              <%= link_to destroy_cocktail_path(cocktail) do %>
+              <i class="far fa-trash-alt delete-icon"></i>
+              <% end %>
             </div>
           </div>
           <% end %>

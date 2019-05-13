@@ -6,7 +6,7 @@
                 label: "Name"
                 %>
 
-    <%= f.association :doses,
+    <%= f.input      :doses,
                       collection: [['A squeeze'], ['1 bag'], ['1 stick'], ['A pinch'], ['1 slice']],
                       label: "Select a dose:",
                       :wrapper_html => { :class => "left-field" }
@@ -14,20 +14,20 @@
 
     <%= f.association :ingredients,
                       label: "Select an ingredient:",
-                      :wrapper_html => { :class => "right-field" }
+                      :wrapper_html => { :class => "right-field select2" }
                       %>
 
-    <%= f.association :doses,
-                          collection: [['A squeeze'], ['1 bag'], ['1 stick'], ['A pinch'], ['1 slice']],
-                          required: false,
-                          label: "Select a dose:",
-                          :wrapper_html => { :class => "left-field" }
+    <%= f.input       :doses,
+                       collection: [['A squeeze'], ['1 bag'], ['1 stick'], ['A pinch'], ['1 slice']],
+                      required: false,
+                      label: "Select a dose:",
+                      :wrapper_html => { :class => "left-field" }
                            %>
 
     <%= f.association :ingredients,
                       label: "Select an ingredient:",
                       required: false,
-                      :wrapper_html => { :class => "right-field" }
+                      :wrapper_html => { :class => "right-field select2" }
                       %>
 
     <%= f.button :submit,
